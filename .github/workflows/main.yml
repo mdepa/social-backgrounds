@@ -1,0 +1,21 @@
+on:
+  pull_request:
+    branches: 
+    - main
+name: prova
+jobs:
+    example-job:
+      runs-on: ubuntu-latest
+      defaults:
+        run:
+          shell: bash
+          working-directory: ./packaging
+      steps:
+      - name: Check out the repository to the runner
+        uses: actions/checkout@v4  
+      - name: Run a script
+        run: ./doPackage.sh
+      - uses: actions/upload-artifact@v4
+        with:
+         name: Release
+         path: packaging/social-backgrounds-*.sh
