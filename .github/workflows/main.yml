@@ -19,6 +19,7 @@ jobs:
         run: ./doPackage.sh
       - name: Release
         uses: phuonghuynh/action-ghrelease@v1.1.0
+        if: startsWith(github.ref, 'refs/tags/')
         with:
           files: social-backgrounds-*.sh
         env:
