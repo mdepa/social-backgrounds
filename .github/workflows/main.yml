@@ -20,7 +20,7 @@ jobs:
       - name: Release
         uses: phuonghuynh/action-ghrelease@v1.1.0
         with:
-          files: social-backgrounds-*.sh
+          files: packaging/social-backgrounds-*.sh
           tag_name: env.RELEASE_TAG
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}        
